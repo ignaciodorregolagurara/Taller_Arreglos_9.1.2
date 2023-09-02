@@ -39,4 +39,12 @@ function showList(array) {
 document.addEventListener("DOMContentLoaded", (e) => {
   // Escribe tu solución aquí
   // Sugerencia de cómo mostrar el array => showList(strangeArray);
+  e.stopPropagation(); //Por si las moscas :)
+  let filtroDeElementos = strangeArray.filter(function (elemento) {
+    return typeof elemento === "string";
+  });
+  filtroDeElementos.sort(function (elemento1, elemento2) {
+    return elemento1.toUpperCase().localeCompare(elemento2.toUpperCase());
+  });
+  showList(filtroDeElementos);
 });
